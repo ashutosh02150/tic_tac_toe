@@ -1,7 +1,7 @@
 import numpy as np
 from time import sleep
 import random
-
+ 
 def possibilities(board):
     res=[]
     for i in range(len(board)):
@@ -9,7 +9,7 @@ def possibilities(board):
             if board[i][j]==0:
                 res.append((i,j))
     return res
-
+ 
 def select(board,player):
     choices= possibilities(board)
     selected= random.choice(choices)
@@ -26,7 +26,7 @@ def row_win(board,player):
         if flag:
             break
     return flag
-
+ 
 def col_win(board,player):
     for i in range(len(board)):
         flag= 1
@@ -54,7 +54,7 @@ def diag_win(board,player):
             break
         j=j-1
     return flag
-
+ 
 def play_game(board):
     winner=0
     counter=1
@@ -75,8 +75,8 @@ def play_game(board):
             sleep(3)
             
     return winner
-
-if __name__=='__main_':
+ 
+if __name__=='__main__':
     board= np.array([
         [0,0,0],
         [0,0,0],
@@ -86,4 +86,4 @@ if __name__=='__main_':
     if ans:
         print("The winner is Player ",ans)
     else:
-        print("No Winner!!")
+        print("No Winner!!")
